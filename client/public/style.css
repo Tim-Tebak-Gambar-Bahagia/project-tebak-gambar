@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#homepage {
+    text-align: center;
+    padding: 250px;
+    background-color: #FBCB4E;
+    background-size: 200px;
+    background-repeat: repeat;
+    font-family: 'Grandstander', cursive;
+}
+
+
+.home {
+    background: #FFFEFE;
+    color: black;
+    width: 500px;
+    display: block;
+    margin: 0px auto;
+    padding: 70px;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.home h1{
+    text-shadow: 2px 2px 4px #000000;
+}
