@@ -29,3 +29,44 @@
 .home h1{
     text-shadow: 2px 2px 4px #000000;
 }
+
+#gamePage {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    background-color: #FBCB4E;
+    font-family: 'Grandstander', cursive;
+}
+
+.page-left {
+    width: 40%;
+    background-color: white;
+    height: 100%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://media.giphy.com/media/aRZ4vTsHnyW6A/giphy.gif');
+}
+.page-left h1{
+    color: white;
+    padding-top: 80px;
+}
+.page-right {
+    width: 57%;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-sm-6{
+    padding-top: 20px;
+}
+
+.card img{
+    width: 31em;
+}
