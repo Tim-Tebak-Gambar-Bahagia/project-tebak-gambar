@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="homepage">
+    <div class="home">
+      <img src="https://media.giphy.com/media/27bK4xfPEEOvAheEgX/giphy.gif" width="200px">
+      <h1>whAtS oN yoUr scReeN</h1>
+      <div id="userJoin">
+        <form @submit.prevent="addUser">
+          <label for="name">enter your name</label>
+          <br />
+          <input v-model="user" type="text" name="name" id="name" placeholder="your name" />
+          <br />
+          <br />
+          <button class="btn btn-dark" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      user: ""
+    };
+  },
+  methods: {
+    addUser() {
+      const sound = "videoplayback_online-audio-converter.com.mp3"
+      if (sound) {
+        const audio = new Audio(sound);
+        audio.play();
+      }
+      this.$store.commit("ADD_USER", this.user)
+      localStorage.setItem("user", this.user)
+    }
   }
 }
 </script>
