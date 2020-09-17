@@ -25,6 +25,33 @@ class PlayerController {
             return res.status(400).json(err)
         });
     }
+
+    static getId (req, res, next) {
+        Player.findByPk(req.params.id)
+        .then((data) => {
+            return res.status(200).json(data)
+        }).catch((err) => {
+            return res.status(400).json(err)
+        });
+    }
+
+    static edit (req, res, next) {
+        let params = {
+            name: req.body.name,
+            score: req.body.score
+        }
+        Player.update(params, {
+            where: {
+                id: req.params.id
+            },
+            returning: true
+        })
+        .then((data) => {
+            return res.status(200).json(data)
+        }).catch((err) => {
+            return res.status(400).json(err)
+        });
+    }
 }
 
 module.exports = PlayerController

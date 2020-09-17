@@ -11,5 +11,11 @@ routes.get('/players', PlayerController.getAll)
 // ADD PLAYERS
 routes.post('/players', PlayerController.addPlayer)
 
+//GET PLAYERS BY ID
+routes.get('/players/:id', PlayerController.getId)
+
+//UPDATE PLAYERS BY ID
+routes.put('/players/:id', PlayerController.edit)
+
 
 module.exports = routes
