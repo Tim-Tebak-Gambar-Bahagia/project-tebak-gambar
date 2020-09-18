@@ -52,6 +52,20 @@ class PlayerController {
             return res.status(400).json(err)
         });
     }
+
+    static deleteAllPlayers(req, res, next) {
+        Player.destroy({
+            where: {},
+            truncate: true
+        })
+        .then(response => {
+            return res.status(200).json({message: 'successfully deleted all Players!'})
+        })
+        .catch(err => {
+            console.log(err)
+            return res.status(400).json(err)
+        })
+    }
 }
 
 module.exports = PlayerController

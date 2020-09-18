@@ -17,5 +17,8 @@ routes.get('/players/:id', PlayerController.getId)
 //UPDATE PLAYERS BY ID
 routes.put('/players/:id', PlayerController.edit)
 
+//DELETE ALL PLAYERS
+routes.delete('/players', PlayerController.deleteAllPlayers)
+
 
 module.exports = routes

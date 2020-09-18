@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'Home',
@@ -36,6 +35,14 @@ export default {
       }
       this.$store.commit("ADD_USER", this.user)
       localStorage.setItem("user", this.user)
+
+      this.$store.dispatch('addPlayer', this.user)
+        .then(response => {
+          this.$router.push('/game')
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }

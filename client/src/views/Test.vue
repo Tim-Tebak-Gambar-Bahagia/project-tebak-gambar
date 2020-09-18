@@ -1,59 +1,45 @@
 <template>
-    <div id="gamePage">
-        <div class="page-left">
-            <h1>whAtS oN yoUr scReeN</h1>
-            <div class="card mt-7" style="width: 45rem;">
-                <ul class="list-group list-group-flush">
-                    <Player v-for="(user, i) in allUsers" :key="i" :user="user"></Player>
-                </ul>
-            </div>
+<div>
+    <form @submit.prevent="setName">
+      <div class="form-group">
+        <label for="chat">Name</label>
+        <input v-model="name" type="text" class="form-control" />
+      </div>
+    </form>
+
+    <form @submit.prevent="sendMessage">
+      <div class="form-group">
+        <label for="chat">Chat</label>
+        <input v-model="inputMessage" type="text" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+
+    <div v-for="(obj, i) in allMessages" :key="i">
+      <p>{{obj.sender}} - {{obj.message}}</p>
+    </div><br><br>
+
+    <div>
+      {{$store.state.soal[indexSoal].image}}
+      <form @submit.prevent="sendAnswer">
+        <div class="form-group">
+          <label for="chat">Answer</label>
+          <input v-model="inputAnswer" type="text" class="form-control" />
         </div>
-        <div class="page-right">
-            <div class="card bg-dark text-white">
-                 <img :src="$store.state.soal[indexSoal].image" class="card-img" alt="">
-                <div class="card-img-overlay">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <h3>Jawaban</h3>
-                        <div class="card-body">
-                            <form @submit.prevent="sendAnswer">
-                                <input v-model="inputAnswer" type="text">
-                                <button type="submit" class="btn btn-primary">submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <h3>Obrolan</h3>
-                        <div class="card-body">
-                            <div v-for="(obj, i) in allMessages" :key="i">
-                                <p>{{obj.sender}} - {{obj.message}}</p>
-                            </div><br><br>
-                            <form @submit.prevent="sendMessage">
-                                <input v-model="inputMessage" type="text">
-                                <button href="#" class="btn btn-primary">send</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </div>
+        <button type="submit" class="btn btn-primary">Submit Answer</button>
+      </form>
     </div>
+    {{done}}
+    {{lose}}
+    <br>
+    {{allUsers}}
+</div>
 </template>
 
-
 <script>
-import Player from '../components/Player.vue'
 export default {
-    name: "Game",
-    components: {
-        Player
-    },
-    data() {
+  name: "Test",
+  data() {
     return {
       name: this.$store.state.name,
       score: 0,
@@ -114,7 +100,6 @@ export default {
           this.done = 'Congratulations!!'
           let payload = 'You Lose :('
           this.$socket.emit("loseMessage", payload);
-          this.$router.push('/leaderboard')
         }
       }
       
@@ -144,7 +129,6 @@ export default {
     sendLoseToOther(payload) {
       console.log(payload, "<< asli masuk ini")
       this.lose = payload
-      this.$router.push('/leaderboard')
     },
     sendLeaderboardsToOther(payload) {
        console.log(payload, "<< asli masuk ini")
