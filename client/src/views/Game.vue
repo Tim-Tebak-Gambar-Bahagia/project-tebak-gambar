@@ -1,6 +1,11 @@
 <template>
     <div id="gamePage">
+        
         <div class="page-left">
+            <nav>
+                <button class="btn btn-dark" @click="$router.push('/leaderboard')"> Leaderboard </button>
+                <button style="margin-left:40px;" class="btn btn-dark" @click="$router.push('/')"> Exit </button>
+            </nav>
             <h1>whAtS oN yoUr scReeN</h1>
             <div class="card mt-7" style="width: 45rem;">
                 <ul class="list-group list-group-flush">
@@ -10,7 +15,7 @@
         </div>
         <div class="page-right">
             <div class="card bg-dark text-white">
-                 <img :src="$store.state.soal[indexSoal].image" class="card-img" alt="">
+                <img :src="$store.state.soal[indexSoal].image" class="card-img" alt="">
                 <div class="card-img-overlay">
                 </div>
             </div>
