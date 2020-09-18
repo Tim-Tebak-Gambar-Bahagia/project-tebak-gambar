@@ -5,10 +5,13 @@
             <div>
                 <h3>How To Play whAtS oN yoUr scReeN Game?</h3>
                 <ul style="text-align: left;">
-                    <li>Setiap pemain memiliki giliran, di mana ia harus menebak gambar yang tepat </li>
-                    <li>Pemain lain meletakkan jawaban di kotak "skor", di mana jawaban yang benar diidentifikasi oleh server dan poin secara otomatis ditambahkan ke skor pemain.</li>
-                    <li>Pemain dapat mendiskusikan kebingungan mereka di kotak obrolan dengan pemain lain, dan menyelesaikannya.</li>
-                    <li>Seorang pemain juga bisa menebak suatu objek lebih dari sekali</li>
+                    <li>Pemain harus menebak gambar yang tepat </li>
+                    <li>Terdapat lima gambar yang harus ditebak </li>
+                    <li>Pemain meletakkan jawaban di kotak "jawaban", di mana jawaban yang benar diidentifikasi oleh server dan poin secara otomatis ditambahkan ke skor pemain.</li>
+                    <li>Pemain dapat berinteraksi dengan pemain lain di kotak obrolan</li>
+                    <li>Pemain harus menebak secara benar untuk lanjut ke gambar selanjutnya</li>
+                    <li>Pemain dinyatakan menang ketika berhasil menebak kelima gambar pertanyaan</li>
+                    <li>Apabila sudah ada pemain yang dinyatakan menang, maka permainan akan berhenti dan ditampilkan leaderboard</li>
                 </ul>
             </div>
             <button class="btn btn-dark" @click="$router.push('/')"> Close </button>

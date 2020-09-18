@@ -9,7 +9,7 @@ class PlayerController {
         .then((data) => {
             return res.status(200).json(data)
         }).catch((err) => {
-            return res.status(400).json(err)
+            return next(err)
         });
     }
 
@@ -22,7 +22,7 @@ class PlayerController {
         .then((data) => {
             return res.status(201).json(data)
         }).catch((err) => {
-            return res.status(400).json(err)
+            return next(err)
         });
     }
 
@@ -31,7 +31,7 @@ class PlayerController {
         .then((data) => {
             return res.status(200).json(data)
         }).catch((err) => {
-            return res.status(400).json(err)
+            return next(err)
         });
     }
 
@@ -49,7 +49,7 @@ class PlayerController {
         .then((data) => {
             return res.status(200).json(data)
         }).catch((err) => {
-            return res.status(400).json(err)
+            return next(err)
         });
     }
 
@@ -63,7 +63,7 @@ class PlayerController {
         })
         .catch(err => {
             console.log(err)
-            return res.status(400).json(err)
+            return next(err)
         })
     }
 }
