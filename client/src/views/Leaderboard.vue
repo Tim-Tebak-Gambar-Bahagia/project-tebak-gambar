@@ -7,38 +7,39 @@
           <div class="lb-content bordered">
             <img :src="medal" class="lb-content-img" alt="medal">
             <span class="lb-content-title">Leaderboard</span>
-            <ul class="lb-list">
-              <li class="lb-list-item">Mario - 5 <a @click.prevent="showModal" class="lb-list-price" href="">Claim Prize</a></li>
-              <li class="lb-list-item">Arviandito - 2</li>
-              <li class="lb-list-item">Merchika - 2</li>
-              <li class="lb-list-item">Fariz Rachimawan - 2</li>
-              <li class="lb-list-item">Dion Michael - 2</li>
-              <li class="lb-list-item">Anggie Yohana - 2</li>
-              <li class="lb-list-item">Grayfield Moningkey - 2</li>
-              <li class="lb-list-item">Patrick Sangian - 2</li>
-              <li class="lb-list-item">Reyand Simatupang - 2</li>
+            <ul v-for="user in dataUser" :key="user.id" class="lb-list">
+              <li class="lb-list-item">{{user.name}} - {{user.score}}<a @click.prevent="showModal" class="lb-list-price" href="">Claim Prize</a></li>
             </ul>
             <span class="lb-content-text">Indonesia negaraku Hacktiv8 bootcampku!</span>
-            <a href="">back to home</a>
+            <a @click.prevent="deleteAllPlayers" href="/">back to home</a>
           </div>
       </div>
+      <!-- {{JSON.stringify(dataUser)}} -->
   </div>
 </template>
 <script>
 import Swal from 'sweetalert2'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Leaderboard',
   data: () => ({
     medal: 'https://media1.giphy.com/media/cLNVpwFasrCB5jbQVp/giphy.gif'
   }),
   methods: {
+    ...mapActions(['getAllPlayers', 'deleteAllPlayers']),
     showModal () {
       Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
+        'Anda Menang!',
+        'Selamat! Anda mendapatkan hadiah',
+        'yeaayyy'
       )
     }
+  },
+  computed: {
+    ...mapState(['dataUser'])
+  },
+  created () {
+    this.getAllPlayers()
   }
 }
 </script>

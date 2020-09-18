@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from '../config/axios'
+import router from '../router'
 
 Vue.use(Vuex)
 
@@ -43,6 +44,9 @@ export default new Vuex.Store({
     },
     ADD_ID(state, payload) {
       state.userId = payload
+    },
+    SET_USER(state, payload) {
+      state.dataUser = payload
     }
   },
   actions: {
@@ -83,22 +87,38 @@ export default new Vuex.Store({
         })
     },
 
-    getAllPlayers(context) {
+    getAllPlayers({commit}) {
       axios({
         method: 'GET',
         url: `/players`
       })
         .then(({ data }) => {
+          commit('SET_USER', data)
           console.log(data, '<< ini di store')
           return data
         })
         .catch(err => {
           console.log(err)
         })
+    },
+    deleteAllPlayers({commit, dispatch}) {
+      return new Promise((resolve, reject) => {
+        axios({
+          method: 'DELETE',
+          url: `/players`
+        })
+          .then(({ data }) => {
+            commit('SET_DELETE_USER', data)
+            console.log(data, '<< delete all players')
+            dispatch('getAllPlayers')
+            router.push('/')
+            resolve(data)
+          })
+          .catch(err => {
+            reject(err)
+          })
+      })
     }
-
-
-
 
   },
 })
