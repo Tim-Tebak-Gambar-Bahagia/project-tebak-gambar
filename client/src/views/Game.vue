@@ -2,7 +2,7 @@
     <div id="gamePage">
         <div class="page-left">
             <h1>whAtS oN yoUr scReeN</h1>
-            <div class="card mt-5" style="width: 25rem;">
+            <div class="card mt-5" style="width: 45rem;">
                 <ul class="list-group list-group-flush">
                     <Player v-for="(user, i) in allUsers" :key="i" :user="user"></Player>
                 </ul>
@@ -30,9 +30,11 @@
                     <div class="card">
                         <h3>Obrolan</h3>
                         <div class="card-body">
-                            <div v-for="(obj, i) in allMessages" :key="i">
+                          <div class="card-messages">
+                            <div  v-for="(obj, i) in allMessages" :key="i">
                                 <p>{{obj.sender}} - {{obj.message}}</p>
                             </div><br><br>
+                          </div>
                             <form @submit.prevent="sendMessage">
                                 <input v-model="inputMessage" type="text">
                                 <button href="#" class="btn btn-primary">send</button>

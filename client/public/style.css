@@ -70,3 +70,8 @@
 .card img{
     width: 31em;
 }
+
+.card-messages {
+    max-height: 100px;
+    overflow-y: scroll;
+}
