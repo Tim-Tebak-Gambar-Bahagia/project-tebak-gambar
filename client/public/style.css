@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#homepage {
+    text-align: center;
+    padding: 250px;
+    background-color: #FBCB4E;
+    background-size: 200px;
+    background-repeat: repeat;
+    font-family: 'Grandstander', cursive;
+}
+
+
+.home {
+    background: #FFFEFE;
+    color: black;
+    width: 500px;
+    display: block;
+    margin: 0px auto;
+    padding: 70px;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.home h1{
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#gamePage {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    background-color: #FBCB4E;
+    font-family: 'Grandstander', cursive;
+}
+
+.page-left {
+    width: 40%;
+    background-color: white;
+    height: 100%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://media.giphy.com/media/aRZ4vTsHnyW6A/giphy.gif');
+}
+.page-left h1{
+    color: white;
+    padding-top: 80px;
+}
+.page-right {
+    width: 56%;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-sm-6{
+    padding-top: 20px;
+}
+
+.card img{
+    width: 31em;
+}
+
+.card-messages {
+    border: 1px solid rgba(0,0,0,.2);
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+#howTo {
+    text-align: center;
+    padding: 20px;
+    background-color: #FBCB4E;
+    background-size: 200px;
+    background-repeat: repeat;
+    font-family: 'Grandstander', cursive;
+}
+
+
+.content {
+    background: #FFFEFE;
+    color: black;
+    width: 1000px;
+    display: block;
+    margin: 0px auto;
+    padding: 70px;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+nav{
+    padding: 20px;
+
+}
+
+nav .btn{
+    padding: 15px 40px;
+    border-radius: 50px;
+}
+
+nav .btn:hover {
+    background-color:#FBCB4E ;
+    color: black;
+    font-size: 18px;
+}
+
+.card h3{
+    background-color: #143a77;
+    color: white;
+}
+
+.list-group-item {
+    font-size: 22px;
+}
