@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import axios from '../config/axios'
 
 Vue.use(Vuex)
 
@@ -47,9 +47,9 @@ export default new Vuex.Store({
   },
   actions: {
     addPlayer (context, payload) {
-      return axios({
+       axios({
         method: 'POST',
-        url: 'http://localhost:3000/players',
+        url: '/players',
         data: {
           name: payload,
           score: 0
@@ -69,7 +69,7 @@ export default new Vuex.Store({
       console.log(data, "<< di store")
       axios({
         method: 'PUT',
-        url: `http://localhost:3000/players/${data.id}`,
+        url: `/players/${data.id}`,
         data: {
           name: data.name,
           score: data.score
@@ -86,7 +86,7 @@ export default new Vuex.Store({
     getAllPlayers(context) {
       axios({
         method: 'GET',
-        url: `http://localhost:3000/players`
+        url: `/players`
       })
         .then(({ data }) => {
           console.log(data, '<< ini di store')

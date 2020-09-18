@@ -30,9 +30,11 @@
                     <div class="card">
                         <h3>Obrolan</h3>
                         <div class="card-body">
-                            <div v-for="(obj, i) in allMessages" :key="i">
+                          <div class="card-messages">
+                            <div  v-for="(obj, i) in allMessages" :key="i">
                                 <p>{{obj.sender}} - {{obj.message}}</p>
                             </div><br><br>
+                          </div>
                             <form @submit.prevent="sendMessage">
                                 <input v-model="inputMessage" type="text">
                                 <button href="#" class="btn btn-primary">send</button>

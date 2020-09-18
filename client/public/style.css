@@ -68,6 +68,14 @@
     overflow-y: scroll;
 }
 
+<<<<<<< HEAD
+.card img{
+    width: 31em;
+}
+
+.card-messages {
+    max-height: 100px;
+=======
 #howTo {
     text-align: center;
     padding: 250px;
@@ -94,5 +102,6 @@
 .cont{
     height: 40px;
     width: 400px;
+>>>>>>> 4a1a7f1d48f8978c300c4bb7c2873166b6f9abe6
     overflow-y: scroll;
 }
