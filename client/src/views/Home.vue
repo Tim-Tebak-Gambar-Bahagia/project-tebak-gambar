@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'Home',
@@ -29,13 +28,22 @@ export default {
   },
   methods: {
     addUser() {
+      console.log(this.user, "<masuk")
       const sound = "videoplayback_online-audio-converter.com.mp3"
-      if (sound) {
-        const audio = new Audio(sound);
-        audio.play();
-      }
+      // if (sound) {
+      //   const audio = new Audio(sound);
+      //   audio.play();
+      // }
       this.$store.commit("ADD_USER", this.user)
       localStorage.setItem("user", this.user)
+
+      this.$store.dispatch('addPlayer', this.user)
+        .then(response => {
+          this.$router.push('/game')
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }
