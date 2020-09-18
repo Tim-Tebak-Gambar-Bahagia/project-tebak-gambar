@@ -15,18 +15,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 rounded">
                     <div class="card">
                         <h3>Jawaban</h3>
                         <div class="card-body">
                             <form @submit.prevent="sendAnswer">
-                                <input v-model="inputAnswer" type="text">
+                                <input class="rounded" v-model="inputAnswer" type="text">
                                 <button type="submit" class="btn btn-primary">submit</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 rounded">
                     <div class="card">
                         <h3>Obrolan</h3>
                         <div class="card-body">
@@ -36,7 +36,7 @@
                             </div><br><br>
                           </div>
                             <form @submit.prevent="sendMessage">
-                                <input v-model="inputMessage" type="text">
+                                <input class="rounded" v-model="inputMessage" type="text">
                                 <button href="#" class="btn btn-primary">send</button>
                             </form>
                         </div>
