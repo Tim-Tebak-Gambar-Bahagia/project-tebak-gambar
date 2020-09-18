@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Game from '../views/Game.vue'
 import Leaderboard from '../views/Leaderboard.vue'
-import Test from '../views/Test.vue'
+import Guide from '../views/HowTo.vue'
 
 Vue.use(VueRouter)
 
@@ -24,9 +24,9 @@ const routes = [
     component: Leaderboard
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/guide',
+    name: 'guide',
+    component: Guide
   }
 ]
 

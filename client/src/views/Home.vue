@@ -28,12 +28,11 @@ export default {
   },
   methods: {
     addUser() {
-      console.log(this.user, "<masuk")
-      const sound = "videoplayback_online-audio-converter.com.mp3"
-      // if (sound) {
-      //   const audio = new Audio(sound);
-      //   audio.play();
-      // }
+      const sound =  require(("../assets/videoplayback_online-audio-converter.com.mp3"));
+      if (sound) {
+        const audio = new Audio(sound);
+        audio.play();
+      }
       this.$store.commit("ADD_USER", this.user)
       localStorage.setItem("user", this.user)
 

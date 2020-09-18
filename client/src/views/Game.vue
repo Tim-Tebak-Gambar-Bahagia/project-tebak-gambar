@@ -2,7 +2,7 @@
     <div id="gamePage">
         <div class="page-left">
             <h1>whAtS oN yoUr scReeN</h1>
-            <div class="card mt-5" style="width: 25rem;">
+            <div class="card mt-7" style="width: 45rem;">
                 <ul class="list-group list-group-flush">
                     <Player v-for="(user, i) in allUsers" :key="i" :user="user"></Player>
                 </ul>
