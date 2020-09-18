@@ -12,8 +12,10 @@
           <br />
           <button class="btn btn-dark" type="submit">Submit</button>
         </form>
+        <router-link to="/guide"> How to play </router-link>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
