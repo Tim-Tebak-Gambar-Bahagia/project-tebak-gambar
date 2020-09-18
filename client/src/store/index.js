@@ -10,23 +10,23 @@ export default new Vuex.Store({
     soal: [
       {
         image: "https://cdn.idntimes.com/content-images/post/20200426/7-5d23b88833fbc1cf02a4f948a55e11b0.jpg",
-        answer: "jawab1"
+        answer: "ruben onsu"
       },
       {
         image: "https://cdn.idntimes.com/content-images/post/20200426/8-eca4f2c39d988593e4549aad7ae9d6e5.jpg",
-        answer: "jawab2"
+        answer: "jeremy teti"
       },
       {
         image: "https://cdn-image.hipwee.com/wp-content/uploads/2017/01/hipwee-tebak8.jpg",
-        answer: "jawab3"
+        answer: "mantab jiwa"
       },
       {
         image: "https://cdn-image.hipwee.com/wp-content/uploads/2017/01/hipwee-tebak11.jpg",
-        answer: "jawab4"
+        answer: "surat edaran asli penangkapan pejabat nakal"
       },
       {
         image: "https://cdn-image.hipwee.com/wp-content/uploads/2017/01/hipwee-tebak12.jpg",
-        answer: "jawab5"
+        answer: "kadar ketampanan wajah otomatis naik ketika beribadah"
       },
       {
         image: "",
@@ -51,7 +51,7 @@ export default new Vuex.Store({
   },
   actions: {
     addPlayer (context, payload) {
-       axios({
+       return axios({
         method: 'POST',
         url: '/players',
         data: {
@@ -110,6 +110,7 @@ export default new Vuex.Store({
           .then(({ data }) => {
             commit('SET_DELETE_USER', data)
             console.log(data, '<< delete all players')
+            localStorage.clear()
             dispatch('getAllPlayers')
             router.push('/')
             resolve(data)

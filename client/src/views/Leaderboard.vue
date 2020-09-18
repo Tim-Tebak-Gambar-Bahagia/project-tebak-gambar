@@ -7,8 +7,8 @@
           <div class="lb-content bordered">
             <img :src="medal" class="lb-content-img" alt="medal">
             <span class="lb-content-title">Leaderboard</span>
-            <ul v-for="user in dataUser" :key="user.id" class="lb-list">
-              <li class="lb-list-item">{{user.name}} - {{user.score}}<a @click.prevent="showModal" class="lb-list-price" href="">Claim Prize</a></li>
+            <ul v-for="(user,i) in dataUser" :key="i" class="lb-list">
+              <li class="lb-list-item">{{user.name}} - {{user.score}}<a v-if="i<1" @click.prevent="showModal" class="lb-list-price" href=""> Claim Prize</a></li>
             </ul>
             <span class="lb-content-text">Indonesia negaraku Hacktiv8 bootcampku!</span>
             <a @click.prevent="deleteAllPlayers" href="/">back to home</a>
@@ -31,7 +31,7 @@ export default {
       Swal.fire(
         'Anda Menang!',
         'Selamat! Anda mendapatkan hadiah',
-        'yeaayyy'
+        'success'
       )
     }
   },

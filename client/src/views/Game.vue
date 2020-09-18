@@ -4,7 +4,7 @@
         <div class="page-left">
             <nav>
                 <button class="btn btn-dark" @click="$router.push('/leaderboard')"> Leaderboard </button>
-                <button style="margin-left:40px;" class="btn btn-dark" @click="$router.push('/')"> Exit </button>
+                <button style="margin-left:40px;" class="btn btn-dark" @click.prevent="deleteAllPlayers"> Exit </button>
             </nav>
             <h1>whAtS oN yoUr scReeN</h1>
             <div class="card mt-7" style="width: 45rem;">
@@ -38,7 +38,7 @@
                           <div class="card-messages">
                             <div  v-for="(obj, i) in allMessages" :key="i">
                                 <p>{{obj.sender}} - {{obj.message}}</p>
-                            </div><br><br>
+                            </div><br>
                           </div>
                             <form @submit.prevent="sendMessage">
                                 <input class="rounded" v-model="inputMessage" type="text">
@@ -55,6 +55,7 @@
 
 <script>
 import Player from '../components/Player.vue'
+import { mapActions } from 'vuex'
 export default {
     name: "Game",
     components: {
@@ -74,6 +75,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['deleteAllPlayers']),
     sendMessage() {
       let payload = {
         sender: this.name,

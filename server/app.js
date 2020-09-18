@@ -3,6 +3,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const routes = require('./routes')
 const cors = require('cors')
+const errHandler = require('./middlewares/errorHandler')
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
@@ -18,6 +19,7 @@ app.use(express.json())
 //ROUTER
 app.use(routes)
 
+app.use(errHandler)
 
 const data = 'eh masuk nih'
 

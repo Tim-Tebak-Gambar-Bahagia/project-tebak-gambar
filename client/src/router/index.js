@@ -24,11 +24,25 @@ const routes = [
     path: '/game',
     name: 'Game',
     component: Game,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem('user')) {
+        next()
+      } else {
+        next('/')
+      }
+    }
   },
   {
     path: '/leaderboard',
     name: 'Leaderboard',
-    component: Leaderboard
+    component: Leaderboard,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem('user')) {
+        next()
+      } else {
+        next('/')
+      }
+    }
   },
 ]
 
