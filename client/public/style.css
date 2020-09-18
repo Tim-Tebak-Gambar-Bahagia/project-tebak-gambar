@@ -55,7 +55,7 @@
     padding-top: 80px;
 }
 .page-right {
-    width: 57%;
+    width: 56%;
     padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
@@ -65,8 +65,34 @@
 
 .col-sm-6{
     padding-top: 20px;
+    overflow-y: scroll;
 }
 
-.card img{
-    width: 31em;
+#howTo {
+    text-align: center;
+    padding: 250px;
+    background-color: #FBCB4E;
+    background-size: 200px;
+    background-repeat: repeat;
+    font-family: 'Grandstander', cursive;
+}
+
+
+.content {
+    background: #FFFEFE;
+    color: black;
+    width: 500px;
+    display: block;
+    margin: 0px auto;
+    padding: 70px;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.cont{
+    height: 40px;
+    width: 400px;
+    overflow-y: scroll;
 }

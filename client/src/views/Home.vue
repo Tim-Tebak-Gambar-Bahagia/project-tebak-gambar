@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     addUser() {
-      const sound = "videoplayback_online-audio-converter.com.mp3"
+      const sound =  require(("../assets/videoplayback_online-audio-converter.com.mp3"));
       if (sound) {
         const audio = new Audio(sound);
         audio.play();
