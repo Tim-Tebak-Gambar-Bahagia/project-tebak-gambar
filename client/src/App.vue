@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/leaderboard">Leaderboard</router-link> |
-      <router-link to="/guide">How to Play</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -18,10 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-#nav {
-  padding: 30px;
 }
 
 #nav a {

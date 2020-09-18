@@ -99,3 +99,27 @@
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
+nav{
+    padding: 20px;
+
+}
+
+nav .btn{
+    padding: 15px 40px;
+    border-radius: 50px;
+}
+
+nav .btn:hover {
+    background-color:#FBCB4E ;
+    color: black;
+    font-size: 18px;
+}
+
+.card h3{
+    background-color: #143a77;
+    color: white;
+}
+
+.list-group-item {
+    font-size: 22px;
+}
